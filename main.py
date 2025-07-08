@@ -30,12 +30,13 @@ async def check_forbidden_words(message: types.Message) -> None:
     if any(word in text_lower for word in FORBIDDEN_WORDS):
         try:
             await message.delete()
-            warn_gif = FSInputFile("josuke_angry.gif")
+            warn_gif = FSInputFile("josuke_angry.git add main.pygif")
             target = message.from_user
             username = f"@{target.username}" if target.username else target.full_name
             warn = await message.answer_animation(
-                 warn_gif, caption=f"/warn @jopapiskaxui"
+                 warn_gif, caption=f"Пред"
             )
+            await message.reply("Предупреждение")
             await asyncio.sleep(10)
             await warn.delete()
         except Exception as e:
